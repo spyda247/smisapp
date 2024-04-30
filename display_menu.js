@@ -2,13 +2,7 @@ import inquirer from "inquirer";
 import processAnswers from "./process_answers.js";
 
 export default function displayMenu() {
-  console.log(
-    "\n--------------------------------------------------------------------------------"
-  );
-  console.log("Student Management Information System");
-  console.log(
-    "--------------------------------------------------------------------------------\n"
-  );
+  console.log("\nStudent Management Information System\n");
 
   inquirer
     .prompt([
@@ -24,7 +18,7 @@ export default function displayMenu() {
           "Display All Student Records",
         ],
         default() {
-          return 0;
+          return 3;
         },
       },
     ])
