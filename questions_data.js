@@ -34,7 +34,7 @@ export const qUpdateRecord = [
 export const qInputRecord = [
   {
     type: "input",
-    name: "full_name",
+    name: "name",
     message: "Enter student's fullname",
   },
   {

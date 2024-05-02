@@ -21,7 +21,11 @@ export default function processAnswers(answers) {
     case "Update Student Record":
       inquirer.prompt(qUpdateRecord).then((answers) => {
         //console.log(JSON.stringify(answers, null, "  "));
-        updateStudentRecord(answers.id, answers.feild, answers.value);
+        updateStudentRecord(
+          answers.id,
+          answers.feild.toLowerCase(),
+          answers.value
+        );
       });
       break;
 
@@ -35,7 +39,7 @@ export default function processAnswers(answers) {
     case "Display All Student Records":
       inquirer.prompt(qRecords).then((answers) => {
         //console.log(JSON.stringify(answers, null, "  "));
-        displayStudentRecords(answers.confirm);
+        displayStudentRecords(answers.confirm.toUpperCase());
       });
       break;
 
