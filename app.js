@@ -6,7 +6,13 @@ import { checkFileDbExists, writeDataToFileDB } from "./utils.js";
 
   /* Check if DB exixts, if not create it */
   if (!checkFileDbExists(path)) {
-    writeDataToFileDB(path, "[]");
+    console.log("No database file found...");
+    try {
+      writeDataToFileDB(path, "[]");
+      console.log("Database file created successfully");
+    } catch (error) {
+      console.log("Something bad happened....Aborting", error);
+    }
   }
 
   /* Display App Menu */
