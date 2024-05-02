@@ -1,5 +1,5 @@
 import displayMenu from "./display_menu.js";
-import { checkFileDbExists, writeDataToFileDB } from "./lib/utils.js";
+import { checkFileDbExists, writeDataToFileDB } from "./utils.js";
 
 (function () {
   const path = "./db.json";

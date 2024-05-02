@@ -1,8 +1,8 @@
 import inquirer from "inquirer";
-import addStudentRecord from "./lib/addStudentRecord.js";
-import updateStudentRecord from "./lib/updateStudentRecord.js";
-import displayStudentRecordById from "./lib/displayStudentRecordById.js";
-import displayStudentRecords from "./lib/displayStudentRecords.js";
+import addStudentRecord from "./addStudentRecord.js";
+import updateStudentRecord from "./updateStudentRecord.js";
+import displayStudentRecordById from "./displayStudentRecordById.js";
+import displayStudentRecords from "./displayStudentRecords.js";
 import {
   qInputRecord,
   qUpdateRecord,
