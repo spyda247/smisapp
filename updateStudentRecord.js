@@ -1,10 +1,7 @@
 import { showMenu, capitalizeFirstLetter } from "./utils.js";
-import db from "./db_utils.js";
+import { getStudentById, updateStudentRecordById } from "./db_utils.js";
 
 export default function updateStudentRecord(id, feild, value) {
-  const res = db();
-  res.then((db) => {
-    const { updateStudentRecordById, getStudentById } = db;
     const data = getStudentById(id);
 
     const feilds = ["age", "name", "grade"];
@@ -39,5 +36,4 @@ export default function updateStudentRecord(id, feild, value) {
     });
 
     showMenu();
-  });
 }

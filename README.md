@@ -24,6 +24,29 @@ npm install
 
 This will download and install the required project dependencies
 
+### Setting up your database
+
+This application uses mysql database, with a single table named students. Create the database and the table with the feilds as shown below
+
+| Field | Type        | Null | Key | Default | Extra          |
+| ----- | ----------- | ---- | --- | ------- | -------------- |
+| id    | int(255)    | NO   | PRI | NULL    | auto_increment |
+| name  | text        | YES  |     | NULL    |                |
+| age   | int(20)     | YES  |     | NULL    |                |
+| grade | varchar(20) | YES  |     | NULL    |                |
+
+Create a database config file named db_config.js in the root directory with the following code
+
+```
+export const config = {
+    host: '<your server hostname or localhost>',
+    user: '<your db username>',
+    password: '<your db password>'
+}
+```
+
+The config object is exported as named export and imported in the file db_utils.js
+
 ### How to use
 
 Open your terminal and run the command

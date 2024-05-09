@@ -1,22 +1,22 @@
 import { showMenu } from "./utils.js";
-import db from "./db_utils.js";
+import { getStudents } from "./db_utils.js";
+import { exit } from "process";
 
 export default function displayStudentRecord(confirm) {
-  const res = db();
-  res
-    .then((db) => {
-      const { getStudents } = db;
-      const data = getStudents();
-      data.then((data) => {
-        if (confirm === "Y") {
-          /* Display data */
-          data.length === 0
-            ? console.log("No data to display. Add a Student record")
-            : console.table(data);
-        }
-      });
-    })
-    .catch((err) => console.log("Something bad happened", err));
-
-  showMenu();
+  try {
+    const data = getStudents();
+    data.then((data) => {
+      if (confirm === "Y" && data) {
+        /* Display data */
+        data.length === 0
+          ? console.log("No data to display. Add a Student record")
+          : console.table(data);
+        showMenu();
+      } else {
+        exit(1);
+      }
+    });
+  } catch (err) {
+    console.log(err);
+  }
 }
