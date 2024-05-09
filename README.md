@@ -41,7 +41,8 @@ Create a database config file named db_config.js in the root directory with the 
 export const config = {
     host: '<your server hostname or localhost>',
     user: '<your db username>',
-    password: '<your db password>'
+    password: '<your db password>',
+    database: '<your databse name>'
 }
 ```
 
